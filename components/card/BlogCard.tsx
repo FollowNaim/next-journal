@@ -17,12 +17,13 @@ function BlogCard({ blog }: { blog: BlogCardType }) {
     <Link href={`/blog/${id}`}>
       <Card className="hover:border-blue-600/50 transition-all  duration-200 group relative rounded-none h-40 flex flex-col justify-center">
         <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
+        <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
         <div className="absolute top-8 right-6 hidden md:flex items-center gap-2">
           <Heart size={20} fill="#cf009e" color="#cf009e" />{" "}
           <p className="text-sm text-muted-foreground">{views}</p>
         </div>
         <CardHeader>
-          <CardTitle className="mb-4 text-lg group-hover:text-blue-600">
+          <CardTitle className="mb-4 text-lg group-hover:text-blue-600 max-w-md">
             {title}
           </CardTitle>
           <CardDescription className="line-clamp-2">{body}</CardDescription>

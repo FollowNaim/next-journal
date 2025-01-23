@@ -4,7 +4,7 @@ import Link from "next/link";
 function Footer() {
   return (
     <div className="border-t py-6">
-      <div className="container mx-auto flex justify-between items-center px-4 w-full">
+      <div className="container mx-auto flex flex-col md:flex-row justify-center gap-4 md:gap-0 md:justify-between items-center px-4 w-full">
         <div className="flex-1">
           <p>
             Next Journal - <span className=""> 2024 all rights reserved</span>

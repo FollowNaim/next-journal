@@ -5,6 +5,8 @@ interface BlogCardType {
   id: number;
   title: string;
   body: string;
+  tags: string[];
+  views: number;
 }
 export default async function Home() {
   const { data } = await axios.get("https://dummyjson.com/posts");

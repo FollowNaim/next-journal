@@ -1,10 +1,26 @@
 "use client";
 import { Squash as Hamburger } from "hamburger-react";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-function MobileNav({ user }) {
+
+interface User {
+  id?: string | null;
+  email?: string | null;
+  family_name?: string | null;
+  given_name?: string | null;
+  picture?: string | null;
+  username?: string | null;
+  phone_number?: string | null;
+}
+
+function MobileNav({ user }: { user: User | null }) {
   const [isOpen, setOpen] = useState(false);
+  const pathname = usePathname();
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
   return (
     <div>
       <Hamburger size={22} toggled={isOpen} toggle={setOpen} />
