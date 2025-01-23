@@ -19,11 +19,11 @@ async function Navbar() {
             <Link href={"/profile"}>Profile</Link>
             <li>
               {user ? (
-                <Link href={"api/auth/login"}>
+                <Link href={"api/auth/logout"}>
                   <Button>Sign Out</Button>
                 </Link>
               ) : (
-                <Link href={"api/auth/logout"}>
+                <Link href={"api/auth/login"}>
                   <Button>Sign in</Button>
                 </Link>
               )}

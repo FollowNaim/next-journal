@@ -4,18 +4,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import axios from "axios";
 
 const fetchBlog = async (id: number) => {
-  const { data: blog } = await axios.get(
-    `https://jsonplaceholder.typicode.com/posts/${id}`
-  );
-  return blog;
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  if (!res.ok) {
+    throw new Error("Failed to fetch blog post");
+  }
+  return res.json();
 };
 
-async function page({ params }) {
-  console.log(params.blogId);
-  const blog = await fetchBlog(params.blogId);
+async function page({ params }: { params: Promise<{ blogId: string }> }) {
+  const { blogId } = await params;
+  console.log(blogId);
+  const blog = await fetchBlog(parseInt(blogId));
   return (
     <div className="min-h-screen flex flex-col justify-center items-center">
       <Card className="max-w-md mx-auto">
