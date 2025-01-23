@@ -1,6 +1,7 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import MobileNav from "./MobileNav";
 
 async function Navbar() {
   const { getUser } = await getKindeServerSession();
@@ -12,7 +13,7 @@ async function Navbar() {
           <h2 className="text-2xl font-bold">Next Journal</h2>
         </div>
         <div>
-          <ul className="flex items-center gap-4">
+          <ul className="items-center gap-4 hidden md:flex">
             <li>
               <Link href={"/"}>Home</Link>
             </li>
@@ -29,6 +30,9 @@ async function Navbar() {
               )}
             </li>
           </ul>
+          <div className="block md:hidden">
+            <MobileNav user={user} />
+          </div>
         </div>
       </div>
     </nav>
