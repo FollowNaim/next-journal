@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/card";
 
 const fetchBlog = async (id: number) => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const res = await fetch(`https://dummyjson.com/posts/${id}`);
   if (!res.ok) {
     throw new Error("Failed to fetch blog post");
   }

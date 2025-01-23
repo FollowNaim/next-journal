@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lato.className}`}>
+      <body className={`${lato.className} dark`}>
         <Navbar />
         <div className="min-h-screen">{children}</div>
         <Footer />

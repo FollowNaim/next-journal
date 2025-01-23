@@ -7,7 +7,7 @@ async function Navbar() {
   const user = await getUser();
   return (
     <nav className="border-b">
-      <div className="container mx-auto flex justify-between items-center px-4 py-2">
+      <div className="container mx-auto flex justify-between items-center px-4 py-4">
         <div>
           <h2 className="text-2xl font-bold">Next Journal</h2>
         </div>

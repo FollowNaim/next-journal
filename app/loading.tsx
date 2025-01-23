@@ -1,7 +1,8 @@
+import "./loading.css";
 function loading() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center">
-      loading...
+      <div className="loader"></div>
     </div>
   );
 }
