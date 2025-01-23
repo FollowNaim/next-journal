@@ -8,9 +8,11 @@ async function Navbar() {
   const user = await getUser();
   return (
     <nav className="border-b">
-      <div className="container mx-auto flex justify-between items-center px-4 py-4">
+      <div className="container mx-auto flex justify-between items-center px-4 py-2 md:py-4">
         <div>
-          <h2 className="text-2xl font-bold">Next Journal</h2>
+          <Link href={"/"}>
+            <h2 className="text-2xl font-bold">Next Journal</h2>
+          </Link>
         </div>
         <div>
           <ul className="items-center gap-4 hidden md:flex">
@@ -20,7 +22,7 @@ async function Navbar() {
             <Link href={"/profile"}>Profile</Link>
             <li>
               {user ? (
-                <Link href={"api/auth/logout"}>
+                <Link prefetch={false} href={"api/auth/logout"}>
                   <Button>Sign Out</Button>
                 </Link>
               ) : (

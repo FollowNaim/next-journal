@@ -17,7 +17,6 @@ const fetchBlog = async (id: number) => {
 
 async function page({ params }: { params: Promise<{ blogId: string }> }) {
   const { blogId } = await params;
-  console.log(blogId);
   const blog = await fetchBlog(parseInt(blogId));
   return (
     <div className="min-h-screen flex flex-col justify-center items-center px-4">

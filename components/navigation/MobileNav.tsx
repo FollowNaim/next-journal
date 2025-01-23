@@ -36,7 +36,7 @@ function MobileNav({ user }: { user: User | null }) {
           <Link href={"/profile"}>Profile</Link>
           <li>
             {user ? (
-              <Link href={"api/auth/logout"}>
+              <Link prefetch={false} href={"api/auth/logout"}>
                 <Button size="lg">Sign Out</Button>
               </Link>
             ) : (
