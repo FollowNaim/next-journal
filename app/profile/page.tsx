@@ -11,7 +11,7 @@ async function app() {
   const { getUser } = await getKindeServerSession();
   const user = await getUser();
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center gap-4">
+    <div className="min-h-[80vh] md:min-h-screen flex flex-col justify-center items-center gap-4">
       <p>
         <span className="">👋 Welcome Back</span> My Friend :{" "}
         <span className="text-blue-500">

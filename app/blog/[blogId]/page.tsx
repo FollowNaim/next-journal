@@ -25,7 +25,7 @@ async function page({ params }: { params: Promise<{ blogId: string }> }) {
   const { blogId } = await params;
   const blog = await fetchBlog(parseInt(blogId));
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center px-4">
+    <div className="min-h-[80vh] md:min-h-screen flex flex-col justify-center items-center px-4">
       <Card className="max-w-xl mx-auto">
         <CardHeader>
           <CardTitle className="text-2xl tracking-wide pb-4">
