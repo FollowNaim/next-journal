@@ -5,7 +5,7 @@ export async function middleware(req: NextRequest) {
   const { getUser } = await getKindeServerSession();
   const user = await getUser();
   const { pathname } = req.nextUrl;
-  if (!user && pathname !== "/api/auth/login" && pathname == "/profile") {
+  if (!user && pathname !== "/api/auth/login") {
     const url = req.nextUrl.clone();
     url.pathname = "/api/auth/login";
     return NextResponse.redirect(url);

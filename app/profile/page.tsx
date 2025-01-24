@@ -1,4 +1,11 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { Metadata } from "next";
+import { sharedMetadata } from "../sharedMetadata";
+
+export const metadata: Metadata = {
+  ...sharedMetadata,
+  title: "Profile | Next Journal",
+};
 
 async function app() {
   const { getUser } = await getKindeServerSession();

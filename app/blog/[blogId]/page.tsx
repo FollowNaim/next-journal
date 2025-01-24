@@ -1,3 +1,4 @@
+import { sharedMetadata } from "@/app/sharedMetadata";
 import {
   Card,
   CardContent,
@@ -6,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Heart } from "lucide-react";
+import { Metadata } from "next";
 
 const fetchBlog = async (id: number) => {
   const res = await fetch(`https://dummyjson.com/posts/${id}`);
@@ -13,6 +15,10 @@ const fetchBlog = async (id: number) => {
     throw new Error("Failed to fetch blog post");
   }
   return res.json();
+};
+export const metadata: Metadata = {
+  ...sharedMetadata,
+  title: "Blog Details | Next Journal",
 };
 
 async function page({ params }: { params: Promise<{ blogId: string }> }) {
