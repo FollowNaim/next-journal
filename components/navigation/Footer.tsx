@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <div className="border-t py-6">
+    <div className="border-t py-6 mt-10">
       <div className="container mx-auto flex flex-col md:flex-row justify-center gap-4 md:gap-0 md:justify-between items-center px-4 w-full">
         <div className="flex-1">
           <p>
